@@ -8,10 +8,10 @@
 多芯片方案成本较高，功耗大，占用更多的空间，不利于缩小外形。
 ZYNQ-7000是Xilinx推出的一款全可编程片上系统（All Programmable SoC），该芯片集成了ARM Cortex A9双核与FPGA，是一款SoPC芯片。其架构如下图，图中的Processing System（PS）即为处理器（ARM Cortex A9 MPCore）部分，里面资源非常的丰富。Programmable Logic（PL）即可编程部分（FPGA），该部分的资源随SoC芯片级别高低不同而不同。
 
-![image]（https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/19.PNG）
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/19.PNG)
 
-![image]（https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/20.PNG）
 
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/20.PNG)
 Zynq-7000系列的亮点在于它包含了完整的ARM处理子系统，每一颗Zynq-7000系列的处理器都包含了双核的CortexTM-A9处理器，整个处理器的搭建都以处理器为中心，而且处理器子系统中集成了内存控制器和大量的外设，使CortexTM-A9的核在Zynq-7000中完全独立于可编程逻辑单元，也就是说如果暂时没有用到FPGA的部分，ARM处理器的子系统也可以独立工作。
 
 在ZYNQ中，可以把PL看成是PS的另一个具有可重配置特点的“外设”，它可以作为PS部分的一个从设备，受ARM处理器控制，比如ARM（PS）的串口数量不够时，以太网接口不够时，或者需要视频接口时都可以用PL部分扩展。FPGA的部分用于扩展子系统，其有丰富的扩展能力，有超过3000个内部互连，连接资源非常丰富。此外在I/O接口方面，FPGA的优点是I/O可以充分自定义，并在FPGA部分集成高速串行口（Multi Gigabit Transceiver）。
@@ -38,9 +38,9 @@ SDK
 本实验选用依元素EES331开发板，EES-331是依元素科技基于Xilinx ZYNQ-7000 FPGA 研发的基础教学平台。其配备的 FPGA (xc7z020clg484-1)具有ARM-A9 双核处理器和丰富 PL 逻辑资源等特点，结合SoC设计的概念能实现较复杂的数字逻辑设计和复杂的控制逻辑设计。该平台拥有丰富的外设，以及灵活的通用扩展接口。EES331硬件实物如下图所示，开发板的详细信息参见EES331用户手册。
 
 
-![image]（https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/21.PNG）
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/21.PNG)
 
-![image]（https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/22.PNG）
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/22.PNG)
 
 具体步骤：
 1.打开桌面VIVADO 2017.3，点击Create Project创建新工程。为新工程命名，选择工程保存路径，点击Next。选择芯片xc7z020clg484-1，点击Next → Finish。点击Create Block Design，创建块设计，并命名
