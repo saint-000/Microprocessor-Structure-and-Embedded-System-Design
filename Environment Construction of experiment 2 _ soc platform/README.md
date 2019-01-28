@@ -43,24 +43,43 @@ SDK
 ![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/22.PNG)
 
 具体步骤：
+
 1.打开桌面VIVADO 2017.3，点击Create Project创建新工程。为新工程命名，选择工程保存路径，点击Next。选择芯片xc7z020clg484-1，点击Next → Finish。点击Create Block Design，创建块设计，并命名
+
 2.在右侧Diagram窗口空白处右击 → Add IP。搜索zynq，双击ZYNQ7 Processing System，添加zynq处理器，并点击Run Block Automation，勾选处理器→ 点击OK，会自动进行一些配置
+
 3.再添加两个GPIO核，在Diagram窗口空白处右击 → Add IP → 搜索gpio → 双击。操作两次，添加两个AXI GPIO核，点击Run Connection Automation，勾选All Automation，点击OK，进行自动配置。自动连接之后在空白处右击选择Regenerate Layout，重新布局
+
 4.双击ZYNQ处理器核，进行配置，更改DDR型号为MT41K256M16 RE-15E，将Bank1 I/O电平设为1.8V，勾选Uart1，用于通过串口查看程序打印信息
+
 5.将GPIO IP核的名字和端口名称修改为LED和SW。双击LED IP核，配置LED为输出，GPIO Width设置为8，对应8个LED灯，点击OK。双击SW IP核，配置SW为输入，GPIO Width设置为8，对应8个拨码开关，点击OK
+
 6.新建约束文件：右击Constraints → Add Sources → 点击Next---Create File，为文件命名，点击OK → Finish。根据EES331用户手册中LED和SW的管脚约束表，在PINS_SET.xdc中添加引脚与电平约束并保存
+
 7.生成顶层文件：先右击system → Generate Output Products → Generate，再右击system → Create HDL Wrapper → OK。Vivado会为IP子系统生成一个顶层文件，以便对该系统进行综合、实现并生成比特流
+
 8.工程配置完成，点击左下侧Generate Bitstream生成比特流，点击Yes → OK，等待比特流生成。若没有其他错误，比特流生成完成后直接关闭弹出的窗口或选择查看报告
+
 9.硬件工程设计好之后，可在以下窗口中看到系统分配给外设的地址。接下来将硬件工程导出到SDK，在SDK中进行软件编译与运行（注：不要单独打开SDK，是在VIVADO中导出）。VIVADO -> File → Export Hardware Design to SDK，导出硬件到SDK，打钩，包括比特流，点击OK
+
 10.打开SDK：File → Launch SDK → OK，进入SDK界面。在SDK中新建工程对LED和SW进行编程，实现相应功能。为新工程命名，并产生相应的BSP →  注意选Next → 选择空工程 →  Finish
+
 11.在新建的工程中添加源文件，新建Source File或者Header File，为文件命名，注意要跟上文件类型.c或.h，点击Finish，在源文件中添加代码
+
 12.硬件和软件设计好之后，保存工程，接下来调试和运行程序，运行之前先把板子的上所有拨码开关拨到下面。使用USB线连接PC机和开发板J3端口（JTAG/PS_UART），打开板子开关，在Vivado中点击左下角Open Hardware Manager → Open target → Auto Connection
+
 若连接不上板子
+
 1. 重启板子或电脑：开关断开或按下板子上的复位按钮（LED和数码管旁边S3/POR(B5)）
+
 2. 杀进程：打开任务管理器——进程——hw_server.exe
+
 13.下载比特流：点击Program device，在弹出的窗口中找到工程的比特流，比特流文件在工程中的路径为：project_name/project_name.runs/impl_1/system_wrapper.bit，如下图，点击Program下载比特流到板子。
+
 14.若运行程序，则右击工程——Run As  ——Launch on Hardware（GDB）
 若调试程序，则右击工程——Debug As——Launch on Hardware（GDB）
+
 15.查看串口打印：使用桌面串口工具Putty，设置波特率和端口号。
 端口号查看方式：右击桌面电脑/计算机 → 管理 → 设备管理器 → 端口
+
 16.若工程正确，可看到8个LED灯循环闪烁，向上拨动任意一个拨码开关时，流水灯运行到最后一个LD7时停止。
