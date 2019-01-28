@@ -86,3 +86,13 @@ SDK
 
 实验截图:
 
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/23.PNG)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/24.PNG)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/25.PNG)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/26.PNG)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/27.PNG)
+
