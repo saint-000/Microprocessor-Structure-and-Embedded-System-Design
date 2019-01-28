@@ -155,3 +155,8 @@ EES331上有8个八段数码管，可以方便设计各种数值显示电路。�
 
 实验截图：
 
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/4.png)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/5.png)
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/6.png)
