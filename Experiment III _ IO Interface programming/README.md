@@ -12,9 +12,12 @@
 位选中每一位对应一个数码管，从左至右为7—0号数码管，对应位选的低位到高位。
 段选每个寄存器对应数码管的a,b,c,d,e,f,g,dp 段，从高到低依次对应dp-a，1为亮，0为灭。例如0的字型数据为0x3f。
 
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/1.PNG)
 
 1.2引脚约束
 该实验板上1-8引脚对应0-3号数码管段选，13-10号引脚对应4—7号数码管的段选。9—12,21—24为位选，对应控制0—7号数码管
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/2.PNG)
 
 1.3工程相关内容
 硬件工程：
@@ -65,6 +68,8 @@ TXD／RXD：是一对数据线，TXD 称发送数据输出，RXD 称接收数据
 
 2.3. UART串口管脚约束
 EES331在PL端设计了一路UART模块电路，方便学习使用串口功能。该UART经CP2103芯片转换成USB通信方式经过J8的USB2.0母口与外部通信。
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/3.PNG)
 
 EES331上有8个八段数码管，可以方便设计各种数值显示电路。八段数码管本身采用的是共阴极驱动的主要由“位选”和“段选”两块电路驱动。但具体的驱动电平需要根据如下原理图来确定。因为位选电路采用了三极管2N5551进行了反向驱动，所以这里需要特别提醒一下。
 2.4. 工程相关内容
