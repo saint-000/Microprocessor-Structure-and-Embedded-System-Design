@@ -8,3 +8,6 @@
 (2) 将拷贝的字节复制到目标空间。
 
 3.运行Debug进行调试。
+
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/13.PNG)
+![image](https://github.com/saint-000/Microprocessor-Structure-and-Embedded-System-Design/blob/master/image/16.PNG)
