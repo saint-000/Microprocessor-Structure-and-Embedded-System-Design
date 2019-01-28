@@ -29,20 +29,31 @@ d) 一般不要直接指定物理寄存器，而让编译器进行分配。
 
 内嵌汇编使用的标记是__asm或者asm关键字，用法如下：
 
+
 __asm
+
 {
+
 instruction [; instruction]
+
 …
 [instruction]
+
 }
 asm(“instruction [; instruction]”);
 
 下面通过一个例子来说明如何在C中内嵌汇编语言，
+
 #include <stdio.h>
+
 void my_strcpy(const char *src，char *dest)
+
 {
+
 char ch;
+
 __asm
+
 {
 loop:
 ldrb ch，[src]，#1
@@ -67,14 +78,22 @@ return 0;
 2) 在C中调用汇编的函数
 在C中调用汇编文件中的函数，要做的主要工作有两个，一是在C中声明函数原型，并加extern关键字；二是在汇编中用EXPORT导出函数名，并用该函数名作为汇编代码段的标识，最后用MOV PC, LR返回。然后，就可以在C中使用该函数了。从C的角度，并不知道该函数的实现是用C还是汇编。更深的原因是因为C的函数名起到表明函数代码起始地址的作用，这个和汇编的label是一致的。
 
+
 /* cfile.c
+
 * in C，call an asm function，asm_strcpy
+
 */
+
 #include <stdio.h>
+
 extern void asm_strcpy(const char *src，char *dest);
+
 int main()
 {
+
 const char *s = "seasons in the sun";
+
 char d[32];
 asm_strcpy(s，d);
 printf("source: %s"，s);
@@ -111,7 +130,9 @@ mov r2，#33
 BL cFun
 END
 
+
 /*C file，called by asmfile */
+
 int cFun(int a，int b，int c)
 {
 return a + b + c;
