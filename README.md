@@ -1,11 +1,16 @@
 # Microprocessor-Structure-and-Embedded-System-Design
 cross the threshold
+
 1.学习使用Keil开发工具。
+
 2.使用ARM汇编语言，编程实现1+2+……+N累加运算功能。
+
 3.使用C调用汇编函数，实现字符串拷贝功能。
+
 4.使用汇编调用C函数，实现求和运算功能。
 
 需要理解的地方：
+
 1、ARM中的C和汇编混合编程
 在嵌入式系统开发中，目前使用的主要编程语言是C和汇编。在稍大规模的嵌入式软件中，例如操作系统，大部分的代码都是用C编写的，主要是因为C语言的结构比较好，便于人的理解，而且有大量的支持库。
 
@@ -62,10 +67,14 @@ cmp ch，#0
 bne loop
 }
 }
+
 int main()
 {
+
 char *a = "forget it and move on!";
+
 char b[64];
+
 my_strcpy(a，b);
 printf("original: %s"，a);
 printf("copyed: %s"，b);
@@ -100,6 +109,7 @@ printf("source: %s"，s);
 printf(" destination: %s"，d);
 return 0;
 }
+
 ;asm function implementation
 AREA asmfile，CODE，READONLY
 EXPORT asm_strcpy
@@ -118,8 +128,11 @@ END
 3) 在汇编中调用C的函数
 
 在汇编中调用C的函数，需要在汇编中IMPORT 对应的C函数名，然后将C的代码放在一个独立的C文件中进行编译，剩下的工作由连接器来处理。
+
 ;the details of parameters transfer comes from ATPCS
+
 ;if there are more than 4 args，stack will be used
+
 EXPORT asmfile
 AREA asmfile，CODE，READONLY
 IMPORT cFun
@@ -129,6 +142,7 @@ mov r1，#22
 mov r2，#33
 BL cFun
 END
+
 
 
 /*C file，called by asmfile */
